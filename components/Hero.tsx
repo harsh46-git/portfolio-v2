@@ -222,12 +222,12 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center text-center w-full max-w-[1400px]">
 
         {/* Massive HARSH */}
-        <h1 className="hero-name display text-[26vw] sm:text-[24vw] lg:text-[21vw] text-paper leading-[0.82] w-full">
+        <h1 className="hero-name display text-[22vw] sm:text-[24vw] lg:text-[21vw] text-paper leading-[0.88] w-full">
           HARSH
         </h1>
 
         {/* Tagline */}
-        <div className="hero-sub flex items-center gap-3 text-xs sm:text-sm tracking-[0.4em] uppercase text-white/60 mt-4">
+        <div className="hero-sub flex items-center gap-3 text-xs sm:text-sm tracking-[0.4em] uppercase text-white/60 mt-6 sm:mt-4">
           <span className="inline-block w-10 h-px bg-white/30" />
           Full Stack · AI Engineer
           <span className="inline-block w-10 h-px bg-white/30" />
