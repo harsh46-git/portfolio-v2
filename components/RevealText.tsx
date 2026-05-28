@@ -1,21 +1,16 @@
 "use client";
 
-import { useEffect, useRef, ReactNode } from "react";
+import { useEffect, useRef, ReactNode, ElementType } from "react";
 import { gsap } from "@/lib/gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 type RevealProps = {
   children: ReactNode;
-  /** Delay in seconds before this element animates (for staggering siblings) */
   delay?: number;
-  /** How far it travels upward, in px. Default 40. */
   y?: number;
-  /** Animation duration in seconds. Default 0.9. */
   duration?: number;
-  /** Optional wrapper className */
   className?: string;
-  /** Render as a different tag if needed (default div) */
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
 };
 
 export default function Reveal({

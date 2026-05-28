@@ -1,19 +1,16 @@
-// components/Magnetic.tsx
+
 "use client";
 
-import { useEffect, useRef, ReactNode } from "react";
+import { useEffect, useRef, ReactNode, ElementType } from "react";
 import { gsap } from "@/lib/gsap";
 
 interface MagneticProps {
   children: ReactNode;
-  /** How far the element moves toward cursor. 0.3 = subtle, 0.6 = strong. Default 0.4 */
   strength?: number;
-  /** Inner text/icon moves a bit MORE than the wrapper for depth. Default 0.25 */
   textStrength?: number;
-  /** Extra hover padding (px) — magnetic field activates slightly before you touch it. Default 0 */
   padding?: number;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
 }
 
 /**
