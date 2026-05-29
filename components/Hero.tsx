@@ -123,18 +123,22 @@ export default function Hero() {
         }
       );
 
-      // ── Everything fades out on scroll (starts later, gentler) ──
-      gsap.to([".hero-tags", ".hero-bio", ".hero-scroll", ".hero-stats"], {
-        opacity: 0,
-        y: -40,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "30% top",
-          end: "70% top",
-          scrub: 0.6,
-        },
-      });
+      // ── Everything fades out on scroll — fromTo so scroll-back restores correctly ──
+      gsap.fromTo(
+        [".hero-tags", ".hero-bio", ".hero-scroll", ".hero-stats"],
+        { opacity: 1, y: 0 },
+        {
+          opacity: 0,
+          y: -40,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "30% top",
+            end: "70% top",
+            scrub: 0.6,
+          },
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();
