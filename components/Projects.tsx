@@ -74,7 +74,7 @@ const PROJECTS: Project[] = [
       "Coursework project — taught me complexity-first thinking",
     ],
     repoUrl: "https://github.com/harsh46-git/Supply-chain-path-optimizer",
-    image: "/Users/harshjaiswal/Downloads/portfolio-v2/public/projects/supply-chain.PNG",
+    image: "/projects/supply-chain.png",
   },
 ];
 

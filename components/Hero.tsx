@@ -105,19 +105,23 @@ export default function Hero() {
         delay: 2,
       });
 
-      // ── HARSH parallax + fade on scroll (single merged trigger) ──
-      gsap.to(".hero-name", {
-        yPercent: 30,
-        opacity: 0.25,
-        scale: 0.97,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 0.8,
-        },
-      });
+      // ── HARSH parallax + fade on scroll (fromTo so scroll-back restores correctly) ──
+      gsap.fromTo(
+        ".hero-name",
+        { opacity: 1, yPercent: 0, scale: 1 },
+        {
+          opacity: 0.15,
+          yPercent: 30,
+          scale: 0.97,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: 0.8,
+          },
+        }
+      );
 
       // ── Everything fades out on scroll (starts later, gentler) ──
       gsap.to([".hero-tags", ".hero-bio", ".hero-scroll", ".hero-stats"], {
@@ -227,7 +231,7 @@ export default function Hero() {
         </h1>
 
         {/* Tagline */}
-        <div className="hero-sub flex items-center gap-3 text-xs sm:text-sm tracking-[0.4em] uppercase text-white/60 mt-6 sm:mt-4">
+        <div className="hero-sub flex items-center gap-3 text-xs sm:text-sm tracking-[0.4em] uppercase text-white/60 mt-10 sm:mt-12">
           <span className="inline-block w-10 h-px bg-white/30" />
           Full Stack · AI Engineer
           <span className="inline-block w-10 h-px bg-white/30" />
