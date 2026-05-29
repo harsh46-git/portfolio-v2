@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
-import { ArrowUpRight, Mail, Github, Linkedin } from "lucide-react";
+import { ArrowUpRight, Mail, Github, Linkedin, Instagram } from "lucide-react";
 
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -9,7 +9,6 @@ export default function Contact() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Heading lines
       gsap.fromTo(
         ".contact-heading",
         { opacity: 0, y: 30 },
@@ -19,7 +18,6 @@ export default function Contact() {
         }
       );
 
-      // Email link
       gsap.fromTo(
         ".contact-email",
         { opacity: 0 },
@@ -29,7 +27,6 @@ export default function Contact() {
         }
       );
 
-      // Social cards stagger
       gsap.fromTo(
         ".contact-card",
         { opacity: 0, y: 20 },
@@ -39,7 +36,6 @@ export default function Contact() {
         }
       );
 
-      // Magnetic effect on email
       const email = emailRef.current;
       if (!email) return;
       email.addEventListener("mousemove", (e: MouseEvent) => {
@@ -71,14 +67,12 @@ export default function Contact() {
           </div>
 
           <div className="lg:col-span-9">
-            {/* Heading — motion.h2 → plain h2 + GSAP class */}
             <h2 className="contact-heading display text-6xl sm:text-8xl lg:text-9xl leading-[0.9] mb-12">
               Got a problem?
               <br />
               <span className="text-accent">Let's ship.</span>
             </h2>
 
-            {/* Email — motion.a → plain a + magnetic GSAP */}
             <a
               ref={emailRef}
               href="mailto:harshjais466@gmail.com"
@@ -91,8 +85,7 @@ export default function Contact() {
               />
             </a>
 
-            {/* Social cards — identical markup */}
-            <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl">
+            <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl">
               <a
                 href="https://github.com/harsh46-git"
                 target="_blank"
@@ -116,6 +109,19 @@ export default function Contact() {
                 <div>
                   <div className="text-xs uppercase tracking-widest text-white/40">LinkedIn</div>
                   <div className="text-sm group-hover:text-accent transition">Harsh-Kumar</div>
+                </div>
+              </a>
+
+              <a
+                href="https://instagram.com/__harsh46__"
+                target="_blank"
+                rel="noreferrer"
+                className="contact-card flex items-center gap-3 border border-white/20 p-4 hover:border-accent hover:bg-white/5 transition-all group"
+              >
+                <Instagram size={20} className="text-accent" />
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-white/40">Instagram</div>
+                  <div className="text-sm group-hover:text-accent transition">__harsh46__</div>
                 </div>
               </a>
 
