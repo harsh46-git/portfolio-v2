@@ -105,37 +105,37 @@ export default function Hero() {
         delay: 2,
       });
 
-      // ── HARSH parallax + fade on scroll (fromTo so scroll-back restores correctly) ──
+      // ── HARSH parallax + fade on scroll ──
       gsap.fromTo(
         ".hero-name",
         { opacity: 1, yPercent: 0, scale: 1 },
         {
-          opacity: 0.15,
-          yPercent: 30,
-          scale: 0.97,
-          ease: "none",
+          opacity: 0.1,
+          yPercent: 25,
+          scale: 0.96,
+          ease: "power1.inOut",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top top",
             end: "bottom top",
-            scrub: 0.8,
+            scrub: 2.5,          // higher = silkier, less snappy
           },
         }
       );
 
-      // ── Everything fades out on scroll — fromTo so scroll-back restores correctly ──
+      // ── Tags/bio/scroll fade out ──
       gsap.fromTo(
         [".hero-tags", ".hero-bio", ".hero-scroll", ".hero-stats"],
         { opacity: 1, y: 0 },
         {
           opacity: 0,
-          y: -40,
-          ease: "none",
+          y: -24,
+          ease: "power1.inOut",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "30% top",
-            end: "70% top",
-            scrub: 0.6,
+            start: "20% top",
+            end: "55% top",
+            scrub: 2,            // smooth lag, not instant
           },
         }
       );
