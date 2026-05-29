@@ -100,7 +100,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/harsh-kumar-129773270/"
+                href="https://www.linkedin.com/in/harsh-kumar-ai/"
                 target="_blank"
                 rel="noreferrer"
                 className="contact-card flex items-center gap-3 border border-white/20 p-4 hover:border-accent hover:bg-white/5 transition-all group"
