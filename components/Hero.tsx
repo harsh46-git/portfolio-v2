@@ -231,7 +231,7 @@ export default function Hero() {
         </h1>
 
         {/* Tagline */}
-        <div className="hero-sub flex items-center gap-3 text-xs sm:text-sm tracking-[0.4em] uppercase text-white/60 mt-10 sm:mt-12">
+        <div className="hero-sub flex items-center gap-3 text-xs sm:text-sm tracking-[0.4em] uppercase text-white/60 mt-10 sm:mt-12 lg:mt-16">
           <span className="inline-block w-10 h-px bg-white/30" />
           Full Stack · AI Engineer
           <span className="inline-block w-10 h-px bg-white/30" />
