@@ -155,7 +155,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="top"
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden w-full"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden w-full" style={{ overflowX: "hidden" }}
     >
       {/* Radial glow behind HARSH */}
       <div
@@ -233,7 +233,7 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center text-center w-full max-w-[1400px] mx-auto">
 
         {/* Massive HARSH */}
-        <h1 className="hero-name display text-paper leading-[0.88] w-full text-center" style={{ fontSize: "clamp(4rem, 21vw, 22rem)" }}>
+        <h1 className="hero-name display text-paper leading-[0.88] w-full text-center" style={{ fontSize: "clamp(3rem, 18vw, 20rem)", maxWidth: "100%", overflowWrap: "break-word" }}>
           HARSH
         </h1>
 
