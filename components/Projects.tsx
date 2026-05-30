@@ -1,4 +1,4 @@
-
+// components/Projects.tsx
 "use client";
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
@@ -100,53 +100,58 @@ export default function Projects() {
       gsap.utils.toArray<HTMLElement>(".project-block").forEach((block, i) => {
         const fromLeft = i % 2 === 0;
 
+        // Visual slides in from side — stronger distance
         gsap.fromTo(
           block.querySelector(".proj-visual"),
-          { x: fromLeft ? -120 : 120, opacity: 0, scale: 0.92 },
+          { x: fromLeft ? -180 : 180, opacity: 0, scale: 0.88, filter: "blur(8px)" },
           {
-            x: 0, opacity: 1, scale: 1,
-            duration: 1.0, ease: "expo.out",
-            scrollTrigger: { trigger: block, start: "top 82%", end: "bottom 15%", toggleActions: "play reverse play reverse" },
+            x: 0, opacity: 1, scale: 1, filter: "blur(0px)",
+            duration: 1.2, ease: "expo.out",
+            scrollTrigger: { trigger: block, start: "top 85%", end: "bottom 10%", toggleActions: "play reverse play reverse" },
           }
         );
 
+        // Content slides from opposite side
         gsap.fromTo(
           block.querySelector(".proj-content"),
-          { x: fromLeft ? 80 : -80, opacity: 0 },
+          { x: fromLeft ? 120 : -120, opacity: 0, y: 30 },
           {
-            x: 0, opacity: 1,
-            duration: 1.0, ease: "expo.out", delay: 0.1,
-            scrollTrigger: { trigger: block, start: "top 82%", end: "bottom 15%", toggleActions: "play reverse play reverse" },
+            x: 0, opacity: 1, y: 0,
+            duration: 1.2, ease: "expo.out", delay: 0.12,
+            scrollTrigger: { trigger: block, start: "top 85%", end: "bottom 10%", toggleActions: "play reverse play reverse" },
           }
         );
 
+        // Number — subtle, hidden on mobile
         gsap.fromTo(
           block.querySelector(".proj-number"),
-          { scale: 1.6, opacity: 0 },
+          { scale: 1.8, opacity: 0 },
           {
-            scale: 1, opacity: 0.04,
-            duration: 1.4, ease: "expo.out",
-            scrollTrigger: { trigger: block, start: "top 85%", end: "bottom 15%", toggleActions: "play reverse play reverse" },
+            scale: 1, opacity: 0.03,
+            duration: 1.6, ease: "expo.out",
+            scrollTrigger: { trigger: block, start: "top 88%", end: "bottom 10%", toggleActions: "play reverse play reverse" },
           }
         );
 
+        // Bullets stagger up
         gsap.fromTo(
           block.querySelectorAll(".proj-bullet"),
-          { x: 30, opacity: 0 },
+          { y: 20, opacity: 0 },
           {
-            x: 0, opacity: 1,
-            duration: 0.45, ease: "power3.out", stagger: 0.07, delay: 0.25,
-            scrollTrigger: { trigger: block, start: "top 80%", end: "bottom 15%", toggleActions: "play reverse play reverse" },
+            y: 0, opacity: 1,
+            duration: 0.5, ease: "power3.out", stagger: 0.08, delay: 0.3,
+            scrollTrigger: { trigger: block, start: "top 82%", end: "bottom 10%", toggleActions: "play reverse play reverse" },
           }
         );
 
+        // Tags pop in
         gsap.fromTo(
           block.querySelectorAll(".proj-tag"),
-          { scale: 0.8, opacity: 0, y: 10 },
+          { scale: 0.75, opacity: 0, y: 12 },
           {
             scale: 1, opacity: 1, y: 0,
-            duration: 0.3, ease: "back.out(2)", stagger: 0.04, delay: 0.38,
-            scrollTrigger: { trigger: block, start: "top 80%", end: "bottom 15%", toggleActions: "play reverse play reverse" },
+            duration: 0.35, ease: "back.out(2)", stagger: 0.04, delay: 0.4,
+            scrollTrigger: { trigger: block, start: "top 82%", end: "bottom 10%", toggleActions: "play reverse play reverse" },
           }
         );
       });
@@ -216,7 +221,7 @@ export default function Projects() {
           {PROJECTS.map((p) => (
             <div key={p.number} className="project-block group relative pt-8">
 
-              <span className="proj-number absolute top-0 left-0 display text-[6rem] sm:text-[9rem] leading-none text-white pointer-events-none select-none opacity-0">
+              <span className="proj-number absolute top-0 left-0 display text-[6rem] sm:text-[9rem] leading-none text-white pointer-events-none select-none opacity-0 hidden sm:block">
                 {p.number}
               </span>
 
