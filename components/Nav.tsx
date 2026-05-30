@@ -46,7 +46,7 @@ export default function Nav() {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5"
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-8 py-5"
       style={{ backdropFilter: "blur(12px)", background: "rgba(10,10,10,0.7)" }}
     >
       <span className="text-xs tracking-[0.25em] uppercase text-[--paper] opacity-60">
@@ -79,7 +79,7 @@ export default function Nav() {
             e.preventDefault();
             (window as any).lenis?.scrollTo("#contact", { offset: -80 });
           }}
-          className="text-xs tracking-[0.2em] uppercase border border-[--paper] border-opacity-30 px-5 py-2 hover:border-[--accent] hover:text-[--accent] transition-all duration-300"
+          className="text-xs tracking-[0.2em] uppercase border border-[--paper] border-opacity-30 px-3 sm:px-5 py-2 hover:border-[--accent] hover:text-[--accent] transition-all duration-300"
         >
           Email Me
         </a>

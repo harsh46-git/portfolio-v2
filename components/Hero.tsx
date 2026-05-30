@@ -219,15 +219,15 @@ export default function Hero() {
       `}</style>
 
       {/* Top corner meta */}
-      <div className="hero-corner absolute top-28 left-6 sm:left-10 text-xs tracking-[0.3em] uppercase text-white/50">
+      <div className="hero-corner absolute top-28 left-4 sm:left-10 text-xs tracking-[0.3em] uppercase text-white/50">
         ◉ Available for full-time roles
       </div>
-      <div className="hero-corner absolute top-28 right-6 sm:right-10 text-xs tracking-[0.3em] uppercase text-white/50 text-right">
+      <div className="hero-corner absolute top-28 right-4 sm:right-10 text-xs tracking-[0.3em] uppercase text-white/50 text-right">
         India<br />UTC+5:30
       </div>
 
       {/* Center stage */}
-      <div className="relative z-10 flex flex-col items-center text-center w-full max-w-[1400px]">
+      <div className="relative z-10 flex flex-col items-center text-center w-full max-w-[1400px] mx-auto">
 
         {/* Massive HARSH */}
         <h1 className="hero-name display text-[22vw] sm:text-[24vw] lg:text-[21vw] text-paper leading-[0.88] w-full">
