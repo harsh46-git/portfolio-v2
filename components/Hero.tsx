@@ -155,7 +155,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="top"
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden w-full"
     >
       {/* Radial glow behind HARSH */}
       <div
@@ -220,9 +220,12 @@ export default function Hero() {
 
       {/* Top corner meta */}
       <div className="hero-corner absolute top-28 left-4 sm:left-10 text-xs tracking-[0.3em] uppercase text-white/50">
-        ◉ Available for full-time roles
+        <span className="inline-flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+          Available for full-time roles
+        </span>
       </div>
-      <div className="hero-corner absolute top-28 right-4 sm:right-10 text-xs tracking-[0.3em] uppercase text-white/50 text-right">
+      <div className="hero-corner absolute top-28 right-4 sm:right-10 text-xs tracking-[0.3em] uppercase text-white/50 text-right hidden sm:block">
         India<br />UTC+5:30
       </div>
 
@@ -230,7 +233,7 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center text-center w-full max-w-[1400px] mx-auto">
 
         {/* Massive HARSH */}
-        <h1 className="hero-name display text-[22vw] sm:text-[24vw] lg:text-[21vw] text-paper leading-[0.88] w-full">
+        <h1 className="hero-name display text-paper leading-[0.88] w-full text-center" style={{ fontSize: "clamp(4rem, 21vw, 22rem)" }}>
           HARSH
         </h1>
 
